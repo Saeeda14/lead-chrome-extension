@@ -1,6 +1,6 @@
 :root {
   --white-color: #ffffff;
-  --green-color: #4f772d;
+  --blue-color: #415a77;
 }
 
 body {
@@ -16,7 +16,7 @@ body {
 
 input { 
   width: 100%;
-  border: 1.5px solid var(--green-color);
+  border: 1.5px solid var(--blue-color);
   border-radius: 1px;
   padding: 5px;
   box-sizing: border-box;   
@@ -24,15 +24,15 @@ input {
 }
 
 input:focus {
-  border-color: var(--green-color);
+  border-color: var(--blue-color);
   outline: none;
 }
 
 button {
   margin-top: 3px;
-  background-color: var(--green-color);
+  background-color: var(--blue-color);
   color: var(--white-color);
-  border: 1.5px solid var(--green-color);
+  border: 1.5px solid var(--blue-color);
   padding: 4px 10px;
   /* font-weight: bold; */
   font-family: 'Roboto', sans-serif;
@@ -40,7 +40,7 @@ button {
 
 #delete-btn { 
   background-color: var(--white-color);
-  color: var(--green-color);
+  color: var(--blue-color);
   font-weight: bold;
 }
 
@@ -53,5 +53,5 @@ li {
   margin-top: 7px;
 }
 a { 
-  color: var(--green-color)
+  color: var(--blue-color)
 }

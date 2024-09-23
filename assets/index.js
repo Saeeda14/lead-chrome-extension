@@ -8,26 +8,26 @@
 // Save that to local storage
 // the delete all btn should clear the input and local Storage 
 
-let myLeads = []
+let noteEntries = []
 const inputEl = document.querySelector("#input-el")
 const inputBtn = document.querySelector("#input-btn")
 const tabBtn = document.querySelector("#tab-btn")
 const deleteBtn = document.querySelector("#delete-btn")
 const ulEl = document.querySelector("#ul-el")
-const localStorageLeads = JSON.parse(localStorage.getItem("myLeads"))
+const localStorageLeads = JSON.parse(localStorage.getItem("myEntries"))
 
 if (localStorageLeads) {
-  myLeads = localStorageLeads
-  render(myLeads)
+  noteEntries = localStorageLeads
+  render(noteEntries)
 }
 
-function render(leads) { 
+function render(entries) { 
   let listItems = ""
-  for (let i = 0; i < leads.length; i++) {
+  for (let i = 0; i < entries.length; i++) {
     listItems += 
     `<li> 
-        <a target='_blank' href='${leads[i]}'>
-        ${leads[i]} 
+        <a target='_blank' href='${entries[i]}'>
+        ${entries[i]} 
         </a>
     </li>`
   }
@@ -35,22 +35,22 @@ function render(leads) {
 }
 
 inputBtn.addEventListener ("click", function () {
-  myLeads.push(inputEl.value)
+  noteEntries.push(inputEl.value)
   inputEl.value = ""
-  localStorage.setItem("myLeads", JSON.stringify(myLeads))
-  render(myLeads)
+  localStorage.setItem("myEntries", JSON.stringify(noteEntries))
+  render(noteEntries)
 })
 
 tabBtn.addEventListener ("click", function() {
   chrome.tabs.query({ active: true, currentWindow: true}, function(tabs) {
-    myLeads.push(tabs[0].url)
-    localStorage.setItem("myLeads", JSON.stringify(myLeads))
-    render(myLeads)
+    noteEntries.push(tabs[0].url)
+    localStorage.setItem("myEntries", JSON.stringify(noteEntries))
+    render(noteEntries)
   })
 });
 
 deleteBtn.addEventListener ("click", function() {
   localStorage.clear()
-  myLeads = []
-  render(myLeads)
+  noteEntries = []
+  render(noteEntries)
 })

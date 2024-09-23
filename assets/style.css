@@ -1,12 +1,57 @@
+:root {
+  --white-color: #ffffff;
+  --green-color: #4f772d;
+}
+
 body {
   /* display: flex;
   flex-direction: column; */
   margin: 0;
   padding: 12px; 
-  min-width: 400px; 
+  min-width: 300px; 
+  max-width: 500px;
+  overflow-x: auto;
+  font-family: 'Open Sans', sans-serif;
 }
 
 input { 
   width: 100%;
+  border: 1.5px solid var(--green-color);
+  border-radius: 1px;
+  padding: 5px;
+  box-sizing: border-box;   
+    /* box sizing makes sure that the width will not exceed more than we have defined because total width is width plus whatever padding and border we have added */
+}
 
+input:focus {
+  border-color: var(--green-color);
+  outline: none;
+}
+
+button {
+  margin-top: 3px;
+  background-color: var(--green-color);
+  color: var(--white-color);
+  border: 1.5px solid var(--green-color);
+  padding: 4px 10px;
+  /* font-weight: bold; */
+  font-family: 'Roboto', sans-serif;
+}
+
+#delete-btn { 
+  background-color: var(--white-color);
+  color: var(--green-color);
+  font-weight: bold;
+}
+
+ul { 
+  list-style: none;
+  padding: 0;
+}
+
+li { 
+  margin-top: 7px;
+}
+a { 
+  color: var(--green-color)
 }
